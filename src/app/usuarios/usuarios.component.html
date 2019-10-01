@@ -1,0 +1,50 @@
+<form class="form-inline" action="">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" />
+    <button class="btn-outline-success">buscar</button>
+  </div>
+</form>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Nascimento</th>
+      <th>Email</th>
+      <th>Passwords</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="usuarios && usuarios.length">
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.Id }}</td>
+      <td>
+        <img
+          src="http://localhost:5000/img/{{ usuario.ImagemUrl }}"
+          [style.width.px]="imagemLargura"
+          [style.margin.px]="imagemMargem"
+        />
+      </td>
+      <td>{{ usuario.FirstName }}</td>
+      <td>{{ usuario.LastName }}</td>
+      <td>{{ usuario.Birth | date }}</td>
+      <td>{{ usuario.Mail }}</td>
+      <td>{{ usuario.Passwords }}</td>
+      <td>
+        <button class="btn btn-success"></button>
+        <button class="btn btn-danger"></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<tfoot *ngIf="!usuarios.length">
+  <tr>
+    <td colspan="7" class="text-center">
+      <h4>
+        Nenhum usuario encontrado!
+      </h4>
+    </td>
+  </tr>
+</tfoot>
