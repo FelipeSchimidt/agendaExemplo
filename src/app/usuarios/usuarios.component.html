@@ -23,7 +23,7 @@
   </thead>
   <tbody *ngIf="usuarios && usuarios.length">
     <tr *ngFor="let usuario of usuarios">
-      <td>{{ usuario.Id }}</td>
+      <td>{{ usuario.id }}</td>
       <td>
         <img
           src="http://localhost:5000/img/{{ usuario.ImagemUrl }}"
@@ -31,11 +31,11 @@
           [style.margin.px]="imagemMargem"
         />
       </td>
-      <td>{{ usuario.FirstName }}</td>
-      <td>{{ usuario.LastName }}</td>
-      <td>{{ usuario.Birth | date }}</td>
-      <td>{{ usuario.Mail }}</td>
-      <td>{{ usuario.Passwords }}</td>
+      <td>{{ usuario.firstName }}</td>
+      <td>{{ usuario.lastName }}</td>
+      <td>{{ usuario.birth | date }}</td>
+      <td>{{ usuario.mail }}</td>
+      <td>{{ usuario.passwords }}</td>
       <td>
         <button class="btn btn-success"></button>
         <button class="btn btn-danger"></button>

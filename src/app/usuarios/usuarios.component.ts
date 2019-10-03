@@ -22,6 +22,7 @@ export class UsuariosComponent implements OnInit {
     this.http.get("http://localhost:5000/api/usuario").subscribe(
       response => {
         this.usuarios = response;
+        console.log(response);
       },
       error => {
         console.log(error);
